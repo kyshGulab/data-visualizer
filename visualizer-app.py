@@ -25,17 +25,6 @@ openai.api_key = api_key
 
 question = st.text_area("How do you want to see your data")
 
-#response = openai.Completion.create(
- #   model="gpt-3.5-turbo-1106", 
-  #  messages=[
-   #     {"role": "user", "content": question}
-    #]
-#)
-
-#answer = response.choices[0].message["content"]
-#st.write(answer)
-
-
 response = client.completions.create(
     model="gpt-3.5-turbo-1106",  # Use the model of your choice
     prompt=f"The user asked: {question}\n",
