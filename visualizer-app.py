@@ -48,10 +48,6 @@ if question:
       prompt=prompt,
       max_tokens=100
   )
-  code = response.choices[0].text.strip()
+  answer = response.choices[0].text.strip()
 
-  # Execute the generated code
-  exec(code)
-
-  # Display the visualization
-  st.pyplot()
+  st.write(answer)
