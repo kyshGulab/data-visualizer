@@ -2,6 +2,9 @@ import streamlit as st
 import pandas as pd
 import openai
 
+from openai import OpenAI
+client = OpenAI()
+
 
 st.title("Data Visualizer App")
 
@@ -30,7 +33,7 @@ question = st.text_area("How do you want to see your data")
 #st.write(answer)
 
 
-response = openai.Completion.create(
+response = client.completions.create(
     model="gpt-3.5-turbo-1106",  # Use the model of your choice
     prompt=f"The user asked: {question}\n",
     max_tokens=100
