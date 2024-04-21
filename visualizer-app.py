@@ -30,7 +30,7 @@ question = st.text_area("How do you want to see your data")
 #st.write(answer)
 
 
-response = openai.Completion.create(
+response = openai.api_resources.completion.Completion.create(
     model="gpt-3.5-turbo-1106",  # Use the model of your choice
     prompt=f"The user asked: {question}\n",
     max_tokens=100
