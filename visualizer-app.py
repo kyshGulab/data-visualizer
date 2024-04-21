@@ -40,8 +40,7 @@ question = st.text_area("How do you want to see your data")
 
 if question:
   # Construct the prompt including selected columns and user's question
-  prompt = f"use seaborn to generate python code to create a visualization to answer: '{question}', generate raw code, not instructions. use the column names based on columns: {', '.join(selected_columns)}"
-  
+  prompt = f"Generate code to visualize '{question}' based on the following columns: {', '.join(selected_columns)}. The data represents {df_selected.shape[0]} entries and {len(selected_columns)} columns."  
   # Pass the prompt to the GPT model to generate code for data visualization
   response = client.completions.create(
       model="davinci-002",
