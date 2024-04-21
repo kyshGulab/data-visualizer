@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import openai
 from openai import OpenAI
-client = OpenAI(api_key='''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''')
+client = OpenAI(api_key='''sk-proj-pyZBE3GJYwwGPiMN7m2nT3BlbkFJJeAAWu2aSrO3QeCsWDKe''')
 
 
 st.title("Data Visualizer App")
