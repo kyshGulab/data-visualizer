@@ -27,7 +27,7 @@ if uploaded_file is not None:
 question = st.text_area("How do you want to see your data")
 
 response = client.completions.create(
-    model="davinci-002",  # Use the model of your choice
+    model="text-davinci-002",  # Use the model of your choice
     prompt= "generate a data visual to answer:, {}".format(question) ,
     max_tokens=100
 )
