@@ -1,9 +1,8 @@
 import streamlit as st
 import pandas as pd
 import openai
-import os
 from openai import OpenAI
-client = OpenAI()
+client = OpenAI(api_key = 'sk-proj-fB8SWqk8dMxXjRwzGdFQT3BlbkFJjt2Zd2yenJe3GMzNFnqH')
 
 
 st.title("Data Visualizer App")
@@ -20,9 +19,8 @@ if uploaded_file is not None:
     st.write(df_selected)
 
 
-api_key = "sk-proj-fB8SWqk8dMxXjRwzGdFQT3BlbkFJjt2Zd2yenJe3GMzNFnqH"
-openai.api_key = api_key
-os.environ[“OPENAI_API_KEY”] = “sk-proj-fB8SWqk8dMxXjRwzGdFQT3BlbkFJjt2Zd2yenJe3GMzNFnqH”
+#api_key = "sk-proj-fB8SWqk8dMxXjRwzGdFQT3BlbkFJjt2Zd2yenJe3GMzNFnqH"
+#openai.api_key = api_key
 
 question = st.text_area("How do you want to see your data")
 
