@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import openai
 
+!pip install openai==0.28
+
 st.title("Data Visualizer App")
 
 uploaded_file = st.file_uploader("Upload CSV file", type=["csv"])
