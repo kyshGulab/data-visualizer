@@ -26,11 +26,31 @@ if uploaded_file is not None:
 
 question = st.text_area("How do you want to see your data")
 
-response = client.completions.create(
-    model="davinci-002",  # Use the model of your choice
-    prompt= "generate a data visual to answer:, {}".format(question) ,
-    max_tokens=100
-)
+#response = client.completions.create(
+    #model="davinci-002",  # Use the model of your choice
+    #prompt= "generate a data visual to answer:, {}".format(question) ,
+    #max_tokens=100
+#)
 
-answer = response.choices[0].text.strip()
-st.write(answer)
+#answer = response.choices[0].text.strip()
+#st.write(answer)
+
+
+
+if question:
+  # Construct the prompt including selected columns and user's question
+  prompt = f"Generate code to visualize '{question}' based on columns: {', '.join(selected_columns)}"
+  
+  # Pass the prompt to the GPT model to generate code for data visualization
+  response = client.completions.create(
+      model="davinci-002",
+      prompt=prompt,
+      max_tokens=100
+  )
+  code = response.choices[0].text.strip()
+
+  # Execute the generated code
+  exec(code)
+
+  # Display the visualization
+  st.pyplot()
