@@ -28,7 +28,7 @@ question = st.text_area("How do you want to see your data")
 
 response = client.completions.create(
     model="gpt-3.5-turbo-instruct",  # Use the model of your choice
-    prompt=f"The user asked: {question}\n",
+    prompt= question,
     max_tokens=100
 )
 
