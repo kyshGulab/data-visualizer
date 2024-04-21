@@ -28,7 +28,7 @@ question = st.text_area("How do you want to see your data")
 
 response = client.completions.create(
     model="davinci-002",  # Use the model of your choice
-    prompt= "using the columns in {} generate a data visual to answer:, {}".format(df_selected, question) ,
+    prompt= "generate a data visual to answer:, {}".format(question) ,
     max_tokens=100
 )
 
