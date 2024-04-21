@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import openai
 from openai import OpenAI
-import matplotlib.pyplot as plt
+
 
 api_keyy = st.secrets["openai_secret"]
 client = OpenAI(api_key = api_keyy)
