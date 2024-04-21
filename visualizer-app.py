@@ -20,7 +20,7 @@ if uploaded_file is not None:
 api_key = "sk-proj-fB8SWqk8dMxXjRwzGdFQT3BlbkFJjt2Zd2yenJe3GMzNFnqH"
 openai.api_key = api_key
 
-question = input("Ask a question: ")
+question = st.text_area("How do you want to see your data")
 
 response = openai.ChatCompletion.create(
     model="gpt-3.5-turbo-1106",  # Use the curie model
