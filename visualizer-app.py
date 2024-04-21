@@ -30,5 +30,5 @@ response = openai.ChatCompletion.create(
 )
 
 answer = response.choices[0].message["content"]
-print("Answer:", answer)
+st.write(answer)
 
