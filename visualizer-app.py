@@ -27,7 +27,7 @@ if uploaded_file is not None:
 question = st.text_area("How do you want to see your data")
 
 response = client.completions.create(
-    model="curie",  # Use the model of your choice
+    model="gpt-3.5-turbo-instruct",  # Use the model of your choice
     prompt=f"The user asked: {question}\n",
     max_tokens=100
 )
