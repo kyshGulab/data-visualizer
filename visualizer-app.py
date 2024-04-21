@@ -13,3 +13,6 @@ if uploaded_file is not None:
     df_selected = df[selected_columns]
     st.write("Selected DataFrame:")
     st.write(df_selected)
+
+
+user_input = st.text_area("How do you want to see your data?")
