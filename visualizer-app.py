@@ -15,4 +15,4 @@ if uploaded_file is not None:
     st.write(df_selected)
 
 
-user_input = st.text_area("How do you want to see your data?")
+user_input = st.text_area("Upload a file and then say how you want to see your data?")
