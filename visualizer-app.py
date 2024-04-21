@@ -20,7 +20,7 @@ if uploaded_file is not None:
 question = st.text_area("How do you want to see your data")
 
 response = openai.ChatCompletion.create(
-    model="gpt-3.5-turbo-1106",  # Use the curie model
+    model="gpt-3.5-turbo-1106", 
     messages=[
         {"role": "user", "content": question}
     ]
