@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import openai
 
 st.title("Data Visualizer App")
 
@@ -15,4 +16,18 @@ if uploaded_file is not None:
     st.write(df_selected)
 
 
-user_input = st.text_area("Upload a file and then say how you want to see your data?")
+
+api_key = "sk-proj-fB8SWqk8dMxXjRwzGdFQT3BlbkFJjt2Zd2yenJe3GMzNFnqH"
+openai.api_key = api_key
+
+response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo-1106",  # Use the curie model
+        messages=[
+            {"role": "user", "content": question}
+        ]
+    )
+    return response.choices[0].message["content"]
+
+question = input("Ask a question: ")
+answer = ask_question(question)
+print("Answer:", answer)
