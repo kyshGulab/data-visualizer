@@ -33,7 +33,7 @@ if question:
   # Pass the prompt to the GPT model to generate code for data visualization davinci-002
   response = client.chat.completions.create( messages = [ {"role" : "user", "content" : prompt, }], model = "gpt-3.5-turbo", )
   
-  answer = response.choices[0].text.strip()
+  answer = response.choices[0].message.content
 
   st.write(answer)
 
