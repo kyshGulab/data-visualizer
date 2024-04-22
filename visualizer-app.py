@@ -30,9 +30,9 @@ question = st.text_area("How do you want to see your data")
 if question:
   # Construct the prompt including selected columns and user's question
   prompt = f"use python to Generate code to answer '{question}' based on the following columns: {', '.join(selected_columns)}. Only provide the code and nothing else"  
-  # Pass the prompt to the GPT model to generate code for data visualization
-  response = client.completions.create(
-      model="davinci-002",
+  # Pass the prompt to the GPT model to generate code for data visualization davinci-002
+  response = client.chat.completions.create(
+      model="gpt-3.5-turbo",
       prompt=prompt,
       max_tokens=100
   )
