@@ -22,25 +22,14 @@ if uploaded_file is not None:
     st.write(df_selected)
 
 
-#api_key = "sk-proj-fB8SWqk8dMxXjRwzGdFQT3BlbkFJjt2Zd2yenJe3GMzNFnqH"
-#openai.api_key = api_key
-
 question = st.text_area("How do you want to see your data")
 
-#response = client.completions.create(
-    #model="davinci-002",  # Use the model of your choice
-    #prompt= "generate a data visual to answer:, {}".format(question) ,
-    #max_tokens=100
-#)
-
-#answer = response.choices[0].text.strip()
-#st.write(answer)
 
 
 
 if question:
   # Construct the prompt including selected columns and user's question
-  prompt = f"use python to Generate code to visualize '{question}' based on the following columns: {', '.join(selected_columns)}. The data represents {df_selected.shape[0]} entries and {len(selected_columns)} columns."  
+  prompt = f"use python to Generate code to answer '{question}' based on the following columns: {', '.join(selected_columns)}. Only provide the code and nothing else"  
   # Pass the prompt to the GPT model to generate code for data visualization
   response = client.completions.create(
       model="davinci-002",
