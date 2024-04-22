@@ -31,11 +31,9 @@ if question:
   # Construct the prompt including selected columns and user's question
   prompt = f"use python to Generate code to answer '{question}' based on the following columns: {', '.join(selected_columns)}. Only provide the code and nothing else"  
   # Pass the prompt to the GPT model to generate code for data visualization davinci-002
-  response = client.chat.completions.create(
-      model="gpt-3.5-turbo",
-      prompt=prompt,
-      max_tokens=100
-  )
+  response = client.chat.completions.create( messages = [ {"role" : "user", "content" : prompt, }], model = "gpt-3.5-turbo", )
+  
   answer = response.choices[0].text.strip()
 
   st.write(answer)
+
