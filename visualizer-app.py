@@ -5,6 +5,16 @@ from openai import OpenAI
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+st.markdown(
+"""
+<style>
+body {
+    background-color: #f0f2f6;  /* Light gray background */
+}
+</style>
+""",
+unsafe_allow_html=True
+)
 
 def generate_visualization():
     api_key = st.secrets["openai_secret"]
