@@ -36,4 +36,4 @@ def generate_visualization():
                 
                 st.write(answer)
 
-generate_visualization(
+generate_visualization()
