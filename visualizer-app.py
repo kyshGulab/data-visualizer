@@ -22,7 +22,7 @@ def generate_visualization():
             df_selected = df[selected_columns]
             st.write("Selected DataFrame:")
             st.write(df_selected)
-            #question = st.text_area("How do you want to see your data")
+            question = st.text_area("Do you want to see suggested ways to analyze your data?")
 
             if question:
                 
