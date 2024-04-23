@@ -5,11 +5,6 @@ from openai import OpenAI
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-st.set_page_config(
-page_title="Data Visualizer App", 
-page_icon=":bar_chart:",
-layout="wide",  
-initial_sidebar_state="expanded")
 
 def generate_visualization():
     api_key = st.secrets["openai_secret"]
