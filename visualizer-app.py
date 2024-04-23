@@ -3,6 +3,7 @@ import pandas as pd
 import openai
 from openai import OpenAI
 import seaborn as sns
+import matplotlib.pyplot as plt
 
 
 def generate_visualization():
