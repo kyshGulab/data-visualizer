@@ -25,7 +25,8 @@ def generate_visualization():
 
             if question:
                 # Construct the prompt including selected columns and user's question
-                prompt = f"The user will upload a dataset to streamlit and call it df, use python to Generate code to construct a data visual to answer '{question}' based on the following columns: {', '.join(selected_columns)} in df. Do not create sample data in your output. Do not provide steps, just provide the code to answer the question."  
+                prompt = f"The user has asked: {question} Based on the uploaded dataset, generate Python code to visualize the sum of selling price for all the makes using a suitable visualization technique. Please only provide the code for the visualization and exclude any additional code or comments."
+  
                 # Pass the prompt to the GPT model to generate code for data visualization davinci-002
                 response = client.chat.completions.create(
                     messages=[{"role": "user", "content": prompt}],
@@ -37,3 +38,7 @@ def generate_visualization():
                 st.write(answer)
 
 generate_visualization()
+
+# Construct the prompt including selected columns and user's question
+prompt = f"The user has asked: 'What is the sum of selling price for all the makes?' Based on the uploaded dataset, generate Python code to visualize the sum of selling price for all the makes using a suitable visualization technique. Please only provide the code for the visualization and exclude any additional code or comments."
+
