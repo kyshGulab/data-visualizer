@@ -30,7 +30,7 @@ question = st.text_area("How do you want to see your data")
 
 if question:
   # Construct the prompt including selected columns and user's question
-  prompt = f"use python to Generate code to construct a data visual to answer '{question}' based on the following columns: {', '.join(selected_columns)}. use DF as the dataset"  
+  prompt = f"The user will upload a dataset to streamlit and call it df, use python to Generate code to construct a data visual to answer '{question}' based on the following columns: {', '.join(selected_columns)} in df. Do not create sample data in your output."  
   # Pass the prompt to the GPT model to generate code for data visualization davinci-002
   response = client.chat.completions.create( messages = [ {"role" : "user", "content" : prompt, }], model = "gpt-3.5-turbo", )
   
