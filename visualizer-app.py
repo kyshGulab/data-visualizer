@@ -10,6 +10,9 @@ def generate_visualization():
     api_key = st.secrets["openai_secret"]
     client = OpenAI(api_key=api_key)
 
+    st.set_page_config(page_title="Data Visualizer App", page_icon=":bar_chart:")
+
+
     st.title("Data Visualizer App")
 
     uploaded_file = st.file_uploader("Upload CSV file", type=["csv"])
@@ -39,7 +42,8 @@ def generate_visualization():
                 
                 answer = response.choices[0].message.content
                 
-                st.write(answer)
+                st.subheader("Suggested Visualization Code:")
+                st.code(answer, language="python")
             
 
 generate_visualization()
