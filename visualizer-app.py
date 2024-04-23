@@ -10,6 +10,11 @@ import matplotlib.pyplot as plt
 def generate_visualization():
     api_key = st.secrets["openai_secret"]
     client = OpenAI(api_key=api_key)
+    st.set_page_config(
+    page_title="Data Visualizer App", 
+    page_icon=":bar_chart:",
+    layout="wide",  
+    initial_sidebar_state="expanded")
 
 
     st.set_page_config(page_title="Data Visualizer App", page_icon=":bar_chart:")
