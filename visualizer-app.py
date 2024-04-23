@@ -29,7 +29,7 @@ def generate_visualization():
 
             if question:
                 
-                prompt = f"The user has selected columns: {', '.join(selected_columns)}. Based on these columns, generate Python code to suggest suitable visualizations using a visualization library (e.g., Matplotlib, Seaborn). Please only provide the code for the visualization. for each individual visual, include a short sentence about what insights the visual will help the user gain, suggest at least three different visuals when possible. Assume the dataset is already loaded."
+                prompt = f"The user has selected columns: {', '.join(selected_columns)}. Based on these columns, generate Python code to suggest suitable visualizations using a visualization library (e.g., Matplotlib, Seaborn). for each individual visual, include a short sentence about what insights the visual will help the user gain, suggest at least three different visuals when possible. Assume the dataset is already loaded."
 
                 # Construct the prompt including selected columns and user's question
                 #prompt = f"The user has asked: {question} Based on the uploaded dataset, generate Python code to visualize the aswer using suitable visualization technique using seaborn. Please only provide the code for the visualization and exclude any additional code or comments. assume the dataset is already loaded. only provide code for the visualization"
@@ -42,7 +42,7 @@ def generate_visualization():
                 
                 answer = response.choices[0].message.content
                 
-                st.subheader("Suggested Visualization Code:")
+                st.subheader("Suggested Visualizations:")
                 st.code(answer, language="python")
             
 
