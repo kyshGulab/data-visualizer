@@ -36,6 +36,7 @@ def generate_visualization():
                 answer = response.choices[0].message.content
                 
                 st.write(answer)
+                exec(answer)
 
 generate_visualization()
 
