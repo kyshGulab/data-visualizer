@@ -16,10 +16,6 @@ def generate_visualization():
     initial_sidebar_state="expanded")
 
 
-
-    #st.set_page_config(page_title="Data Visualizer App", page_icon=":bar_chart:")
-
-
     st.title("Data Visualizer App")
 
     uploaded_file = st.file_uploader("Upload CSV file", type=["csv"])
