@@ -16,7 +16,7 @@ def generate_visualization():
     initial_sidebar_state="expanded")
 
 
-    st.title("Data Visualizer App")
+    st.title("Easy Data")
 
     uploaded_file = st.file_uploader("Upload CSV file", type=["csv"])
 
